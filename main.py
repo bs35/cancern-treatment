@@ -9,11 +9,7 @@ import os
 
 app = Flask(__name__)
 
-# get model
-model = load_model("gs://cancer_treatment/saved_model")
-
-# assign weights
-model.load_weights("gs://cancer_treatment/best_weights")
+model = load_model('cancer_pretrained_model.h5')
 
 model.make_predict_function()
 

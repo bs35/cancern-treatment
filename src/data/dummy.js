@@ -18,7 +18,10 @@ import avatar4 from './avatar4.jpg';
 import avatar5 from './avatar5.png';
 import avatar6 from './avatar6.jpg';
 import avatar7 from './avatar7.jpg';
-import avatardocrec from './avatardocrec.jpg';
+import avatardoc from './avatardoc.png';
+import avatardocrec from './avatardocrec.jpg'
+import professional from './professional-young-team-group-doctors-38070132.jpg'
+import large from './large-Smile-Guy-web.jpg'
 import product1 from './product1.jpg';
 import product2 from './product2.jpg';
 import product3 from './product3.jpg';
@@ -263,7 +266,7 @@ export const barCustomSeries = [
     dataSource: barChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Gold',
+    name: 'безрецидивная выживаемость',
     type: 'Column',
     marker: {
       dataLabel: {
@@ -277,7 +280,7 @@ export const barCustomSeries = [
     dataSource: barChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'Silver',
+    name: 'рецидив',
     type: 'Column',
     marker: {
       dataLabel: {
@@ -291,7 +294,7 @@ export const barCustomSeries = [
     dataSource: barChartData[2],
     xName: 'x',
     yName: 'y',
-    name: 'Bronze',
+    name: 'плацебо',
     type: 'Column',
     marker: {
       dataLabel: {
@@ -304,12 +307,12 @@ export const barCustomSeries = [
 ];
 export const colorMappingData = [
   [
-    { x: 'Jan', y: 6.96 },
-    { x: 'Feb', y: 8.9 },
-    { x: 'Mar', y: 12 },
-    { x: 'Apr', y: 17.5 },
-    { x: 'May', y: 22.1 },
-    { x: 'June', y: 25 },
+    { x: '', y: 6.96 },
+    { x: '', y: 8.9 },
+    { x: '', y: 12 },
+    { x: '', y: 17.5 },
+    { x: '', y: 22.1 },
+    { x: '', y: 25 },
     { x: 'July', y: 29.4 },
     { x: 'Aug', y: 29.6 },
     { x: 'Sep', y: 25.8 },
@@ -491,15 +494,15 @@ export const links = [
     links: [
       {
         name: 'Info',
-        icon: <IoMdContacts />,
+        icon: <FiEdit />,
         display_name: 'О меланоме',
       },
     ],
   },
   {
-    title: 'На удаление',
+    title: '',
     links: [
-      {
+      {/*{
         name: 'calendar',
         icon: <AiOutlineCalendar />,
       },
@@ -525,7 +528,7 @@ export const links = [
         icon: <AiOutlineBarChart />,
       },
       {
-        name: 'pie',
+        name: 'Всевозможные планы лечения',
         icon: <FiPieChart />,
       },
       {
@@ -543,7 +546,7 @@ export const links = [
       {
         name: 'stacked',
         icon: <AiOutlineBarChart />,
-      },
+      },*/}
     ],
   },
 ];
@@ -690,31 +693,140 @@ export const recentTransactions = [
 ];
 
 export const weeklyStats = [
-  {
-    icon: <FiAlertTriangle />,
-    amount: '',
-    title: 'В повышенной группе риска',
-    desc: '',
-    iconBg: '#FB9678',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <AiFillExclamationCircle />,
-    amount: '',
-    title: 'Подозрение на меланому III степени',
-    desc: '',
-    iconBg: '#00C292',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <MdOutlineFullscreen />,
-    amount: '',
-    title: 'Необходимо пройти скрининг у онколога',
-    desc: '',
-    iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'red-600',
-  },
+  /*{prediction,malignant_probability > 95 &&*/
+    {
+      icon: <FiAlertTriangle />,
+      amount: '',
+      title: 'В повышенной группе риска',/*В повышенной группе риска*/
+      desc: '',
+      iconBg: '#FB9678',
+      pcColor: 'red-600',
+    },
+    {
+      icon: <AiFillExclamationCircle />,
+      amount: '',
+      title: 'Подозрение на меланому III степени',/*Подозрение на меланому III степени*/
+      desc: '',
+      iconBg: '#00C292',
+      pcColor: 'green-600',
+    },
+    {
+      icon: <MdOutlineFullscreen />,
+      amount: '',
+      title: 'Необходимо пройти скрининг у онколога',/*Необходимо пройти скрининг у онколога*/
+      desc: '',
+      iconBg: 'rgb(254, 201, 15)',
+      pcColor: 'red-600',
+    },
+    
+  /*}
+   {prediction.malignant_probability > 90 &&
+      {icon: <FiAlertTriangle />,
+      amount: '',
+      title: 'В повышенной группе риска',
+      desc: '',
+      iconBg: '#FB9678',
+      pcColor: 'red-600',
+    },
+    {
+      icon: <AiFillExclamationCircle />,
+      amount: '',
+      title: 'Подозрение на меланому II степени',
+      desc: '',
+      iconBg: '#00C292',
+      pcColor: 'green-600',
+    },
+    {
+      icon: <MdOutlineFullscreen />,
+      amount: '',
+      title: 'Необходимо пройти скрининг у онколога',
+      desc: '',
+      iconBg: 'rgb(254, 201, 15)',
+      pcColor: 'red-600',
+    },
+   }
+  {prediction.malignant_probability < 90 &&
+    {
+      icon: <FiAlertTriangle />,
+      amount: '',
+      title: 'В повышенной группе риска',
+      desc: '',
+      iconBg: '#FB9678',
+      pcColor: 'red-600',
+    },
+    {
+      icon: <AiFillExclamationCircle />,
+      amount: '',
+      title: 'Подозрение на меланому I степени',
+      desc: '',
+      iconBg: '#00C292',
+      pcColor: 'green-600',
+    },
+    {
+      icon: <MdOutlineFullscreen />,
+      amount: '',
+      title: 'Необходимо пройти скрининг у онколога',
+      desc: '',
+      iconBg: 'rgb(254, 201, 15)',
+      pcColor: 'red-600',
+    },
+  }*/
 ];
+export const weeklyStats2 = [
+  /*{prediction,malignant_probability > 95 &&*/
+    {
+      icon: <FiAlertTriangle />,
+      amount: '',
+      title: 'В повышенной группе риска',/*В повышенной группе риска*/
+      desc: '',
+      iconBg: '#FB9678',
+      pcColor: 'red-600',
+    },
+    {
+      icon: <AiFillExclamationCircle />,
+      amount: '',
+      title: 'Подозрение на меланому II степени',/*Подозрение на меланому III степени*/
+      desc: '',
+      iconBg: '#00C292',
+      pcColor: 'green-600',
+    },
+    {
+      icon: <MdOutlineFullscreen />,
+      amount: '',
+      title: 'Необходимо пройти скрининг у онколога',/*Необходимо пройти скрининг у онколога*/
+      desc: '',
+      iconBg: 'rgb(254, 201, 15)',
+      pcColor: 'red-600',
+    },
+  ];
+
+  export const weeklyStats3 = [
+    /*{prediction,malignant_probability > 95 &&*/
+      {
+        icon: <FiAlertTriangle />,
+        amount: '',
+        title: 'В повышенной группе риска',/*В повышенной группе риска*/
+        desc: '',
+        iconBg: '#FB9678',
+        pcColor: 'red-600',
+      },
+      {
+        icon: <AiFillExclamationCircle />,
+        amount: '',
+        title: 'Подозрение на меланому I степени',/*Подозрение на меланому III степени*/
+        desc: '',
+        iconBg: '#00C292',
+        pcColor: 'green-600',
+      },
+      {
+        icon: <MdOutlineFullscreen />,
+        amount: '',
+        title: 'Необходимо пройти скрининг у онколога',/*Необходимо пройти скрининг у онколога*/
+        desc: '',
+        iconBg: 'rgb(254, 201, 15)',
+        pcColor: 'red-600',
+      },
+    ];
 
 export const productsPerformance = [
   {
@@ -755,6 +867,7 @@ export const productsPerformance = [
   },
 ];
 
+
 export const medicalproBranding = {
   data: [
     {
@@ -788,6 +901,86 @@ export const medicalproBranding = {
   ],
 };
 
+export const medicalproBranding2 = {
+  data: [
+    {
+      title: '',
+      desc: '',
+    },
+    {
+      title: '',
+      desc: '',
+    },
+    {
+      title: '',
+      desc: '',
+    },
+  ],
+  teams: [
+    {
+      name: '13:30',
+      color: 'orange',
+    },
+    {
+      name: '',
+      color: '#FB9678',
+    },
+  ],
+  leaders: [
+    {
+      image:
+        large,
+    },
+  ],
+};
+
+export const medicalproBranding3 = {
+  data: [
+    {
+      title: '',
+      desc: '',
+    },
+    {
+      title: '',
+      desc: '',
+    },
+    {
+      title: '',
+      desc: '',
+    },
+  ],
+  teams: [
+    {
+      name: '13:30',
+      color: 'orange',
+    },
+    {
+      name: '',
+      color: '#FB9678',
+    },
+  ],
+  leaders: [
+    {
+      image:
+        professional,
+    },
+  ],
+};
+export const doctor1 = [
+  {
+    image : avatardocrec
+  }
+]
+export const doctor2 = [
+  {
+    image : professional
+  }
+]
+export const doctor3 = [
+  {
+    image : large
+  }
+]
 export const themeColors = [
   {
     name: 'blue-theme',
@@ -2497,7 +2690,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Germany',
+    name: 'БРАФ',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -2505,7 +2698,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'England',
+    name: 'ЦОК',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -2513,7 +2706,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
-    name: 'India',
+    name: 'ИГХ исследование',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -2521,13 +2714,13 @@ export const lineCustomSeries = [
 ];
 
 export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
-  { x: 'License', y: 11, text: '11%' },
-  { x: 'Facilities', y: 18, text: '18%' },
-  { x: 'Taxes', y: 14, text: '14%' },
-  { x: 'Insurance', y: 16, text: '16%' },
+  { x: '', y: 18, text: '16%' },
+  { x: '', y: 8, text: '8%' },
+  { x: '', y: 15, text: '20%' },
+  { x: '', y: 11, text: '11%' },
+  { x: '', y: 18, text: '15%' },
+  { x: '', y: 14, text: '14%' },
+  { x: 'Разные варианты плана лечения', y: 16, text: '16%' },
 ];
 
 export const contextMenuItems = [
@@ -2624,10 +2817,10 @@ export const stackedPrimaryYAxis = {
 
 export const kanbanData = [
   {
-    Id: 'Task 1',
+    Id: 'Ниволумаб',
     Title: 'Task - 29001',
     Status: 'Open',
-    Summary: 'Analyze the new requirements gathered from the customer.',
+    Summary: 'доза : 1 мг/кг внутривенно капельно 1раз в 3 недели ',
     Type: 'Story',
     Priority: 'Low',
     Tags: 'Analyze,Customer',
@@ -2638,10 +2831,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-low, e-nancy-davloio',
   },
   {
-    Id: 'Task 2',
-    Title: 'Task - 29002',
+    Id: 'Сначало пройти иммунотерапию',
+    Title: '',
     Status: 'InProgress',
-    Summary: 'Improve application performance',
+    Summary: '',
     Type: 'Improvement',
     Priority: 'Normal',
     Tags: 'Improvement',
@@ -2652,10 +2845,10 @@ export const kanbanData = [
     ClassName: 'e-improvement, e-normal, e-andrew-fuller',
   },
   {
-    Id: 'Task 3',
-    Title: 'Task - 29003',
+    Id: 'Ипилимумаба',
+    Title: '',
     Status: 'Open',
-    Summary: 'Arrange a web meeting with the customer to get new requirements.',
+    Summary: 'доза: 3 мг/кг внутривенно капельно 1раз в 3 недели',
     Type: 'Others',
     Priority: 'Critical',
     Tags: 'Meeting',
@@ -2665,11 +2858,11 @@ export const kanbanData = [
     Color: '#1F88E5',
     ClassName: 'e-others, e-critical, e-janet-leverling',
   },
-  {
-    Id: 'Task 4',
+  /*{
+    Id: '',
     Title: 'Task - 29004',
     Status: 'InProgress',
-    Summary: 'Fix the issues reported in the IE browser.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'IE',
@@ -2680,24 +2873,24 @@ export const kanbanData = [
     ClassName: 'e-bug, e-release, e-janet-leverling',
   },
   {
-    Id: 'Task 5',
+    Id: 'b',
     Title: 'Task - 29005',
     Status: 'Review',
-    Summary: 'Fix the issues reported by the customer.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Low',
     Tags: 'Customer',
-    Estimate: '3.5',
+    Estimate: 3.5,
     Assignee: 'Steven walker',
     RankId: 1,
     Color: '#E64A19',
     ClassName: 'e-bug, e-low, e-steven-walker',
   },
   {
-    Id: 'Task 6',
+    Id: 'c',
     Title: 'Task - 29007',
     Status: 'Validate',
-    Summary: 'Validate new requirements',
+    Summary: '',
     Type: 'Improvement',
     Priority: 'Low',
     Tags: 'Validation',
@@ -2706,12 +2899,12 @@ export const kanbanData = [
     RankId: 1,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-low, e-robert-king',
-  },
+  },*/
   {
-    Id: 'Task 7',
+    Id: 'd',
     Title: 'Task - 29009',
     Status: 'Review',
-    Summary: 'Fix the issues reported in Safari browser.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'Fix,Safari',
@@ -2722,10 +2915,10 @@ export const kanbanData = [
     ClassName: 'e-bug, e-release, e-nancy-davloio',
   },
   {
-    Id: 'Task 8',
+    Id: 'Рекомендуется наблюдение без повторного хирургического вмешательства',
     Title: 'Task - 29010',
     Status: 'Close',
-    Summary: 'Test the application in the IE browser.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Low',
     Tags: 'Review,IE',
@@ -2735,11 +2928,12 @@ export const kanbanData = [
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-margaret-hamilt',
   },
+  {/*
   {
-    Id: 'Task 9',
+    Id: '',
     Title: 'Task - 29011',
     Status: 'Validate',
-    Summary: 'Validate the issues reported by the customer.',
+    Summary: '',
     Type: 'Story',
     Priority: 'High',
     Tags: 'Validation,Fix',
@@ -2750,10 +2944,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-high, e-steven-walker',
   },
   {
-    Id: 'Task 10',
+    Id: '',
     Title: 'Task - 29015',
     Status: 'Open',
-    Summary: 'Show the retrieved data from the server in grid control.',
+    Summary: '',
     Type: 'Story',
     Priority: 'High',
     Tags: 'Database,SQL',
@@ -2764,10 +2958,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-high, e-margaret-hamilt',
   },
   {
-    Id: 'Task 11',
+    Id: '',
     Title: 'Task - 29016',
     Status: 'InProgress',
-    Summary: 'Fix cannot open user’s default database SQL error.',
+    Summary: '',
     Priority: 'Critical',
     Type: 'Bug',
     Tags: 'Database,Sql2008',
@@ -2778,10 +2972,10 @@ export const kanbanData = [
     ClassName: 'e-bug, e-critical, e-janet-leverling',
   },
   {
-    Id: 'Task 12',
+    Id: '',
     Title: 'Task - 29017',
     Status: 'Review',
-    Summary: 'Fix the issues reported in data binding.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Normal',
     Tags: 'Databinding',
@@ -2792,10 +2986,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-normal, e-janet-leverling',
   },
   {
-    Id: 'Task 13',
+    Id: '',
     Title: 'Task - 29018',
     Status: 'Close',
-    Summary: 'Analyze SQL server 2008 connection.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Critical',
     Tags: 'Grid,Sql',
@@ -2806,10 +3000,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-release, e-andrew-fuller',
   },
   {
-    Id: 'Task 14',
+    Id: '',
     Title: 'Task - 29019',
     Status: 'Validate',
-    Summary: 'Validate databinding issues.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Low',
     Tags: 'Validation',
@@ -2820,10 +3014,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-low, e-margaret-hamilt',
   },
   {
-    Id: 'Task 15',
+    Id: '',
     Title: 'Task - 29020',
     Status: 'Close',
-    Summary: 'Analyze grid control.',
+    Summary: '',
     Type: 'Story',
     Priority: 'High',
     Tags: 'Analyze',
@@ -2834,10 +3028,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-high, e-margaret-hamilt',
   },
   {
-    Id: 'Task 16',
+    Id: '',
     Title: 'Task - 29021',
     Status: 'Close',
-    Summary: 'Stored procedure for initial data binding of the grid.',
+    Summary: '',
     Type: 'Others',
     Priority: 'Critical',
     Tags: 'Databinding',
@@ -2848,10 +3042,10 @@ export const kanbanData = [
     ClassName: 'e-others, e-release, e-steven-walker',
   },
   {
-    Id: 'Task 17',
+    Id: '',
     Title: 'Task - 29022',
     Status: 'Close',
-    Summary: 'Analyze stored procedures.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Critical',
     Tags: 'Procedures',
@@ -2862,10 +3056,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-release, e-janet-leverling',
   },
   {
-    Id: 'Task 18',
+    Id: '',
     Title: 'Task - 29023',
     Status: 'Validate',
-    Summary: 'Validate editing issues.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Critical',
     Tags: 'Editing',
@@ -2876,10 +3070,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-critical, e-nancy-davloio',
   },
   {
-    Id: 'Task 19',
+    Id: '',
     Title: 'Task - 29024',
     Status: 'Review',
-    Summary: 'Test editing functionality.',
+    Summary: '',
     Type: 'Story',
     Priority: 'Normal',
     Tags: 'Editing,Test',
@@ -2890,10 +3084,10 @@ export const kanbanData = [
     ClassName: 'e-story, e-normal, e-nancy-davloio',
   },
   {
-    Id: 'Task 20',
+    Id: '',
     Title: 'Task - 29025',
     Status: 'Open',
-    Summary: 'Enhance editing functionality.',
+    Summary: '',
     Type: 'Improvement',
     Priority: 'Low',
     Tags: 'Editing',
@@ -2904,10 +3098,10 @@ export const kanbanData = [
     ClassName: 'e-improvement, e-low, e-andrew-fuller',
   },
   {
-    Id: 'Task 21',
+    Id: '',
     Title: 'Task - 29026',
     Status: 'InProgress',
-    Summary: 'Improve the performance of the editing functionality.',
+    Summary: '',
     Type: 'Epic',
     Priority: 'High',
     Tags: 'Performance',
@@ -2918,10 +3112,10 @@ export const kanbanData = [
     ClassName: 'e-epic, e-high, e-nancy-davloio',
   },
   {
-    Id: 'Task 22',
+    Id: '',
     Title: 'Task - 29027',
     Status: 'Open',
-    Summary: 'Arrange web meeting with the customer to show editing demo.',
+    Summary: '',
     Type: 'Others',
     Priority: 'High',
     Tags: 'Meeting,Editing',
@@ -2932,10 +3126,10 @@ export const kanbanData = [
     ClassName: 'e-others, e-high, e-steven-walker',
   },
   {
-    Id: 'Task 23',
+    Id: '',
     Title: 'Task - 29029',
     Status: 'Review',
-    Summary: 'Fix the editing issues reported by the customer.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Low',
     Tags: 'Editing,Fix',
@@ -2946,10 +3140,10 @@ export const kanbanData = [
     ClassName: 'e-bug, e-low, e-janet-leverling',
   },
   {
-    Id: 'Task 24',
+    Id: '',
     Title: 'Task - 29030',
     Status: 'Testing',
-    Summary: 'Fix the issues reported by the customer.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'Customer',
@@ -2960,10 +3154,10 @@ export const kanbanData = [
     ClassName: 'e-bug, e-critical, e-steven-walker',
   },
   {
-    Id: 'Task 25',
+    Id: '',
     Title: 'Task - 29031',
     Status: 'Testing',
-    Summary: 'Fix the issues reported in Safari browser.',
+    Summary: '',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'Fix,Safari',
@@ -2972,7 +3166,7 @@ export const kanbanData = [
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-nancy-davloio',
-  },
+  },*/}
 ];
 
 export const financialChartData = [

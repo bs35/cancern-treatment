@@ -17,7 +17,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
       <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
-          name="Sale"
+          name="Ипилимумаба(3 мг/кг) + Ниволумаб(1 мг/кг)"
           dataSource={data}
           xName="x"
           yName="y"
@@ -31,6 +31,10 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
           dataLabel={{
             visible: true,
             name: 'text',
+            name1: 'text',
+            name2: 'text',
+            name3: 'text',
+            name4: 'text',
             position: 'Inside',
             font: {
               fontWeight: '600',

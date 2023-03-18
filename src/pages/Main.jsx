@@ -2,11 +2,12 @@ import React from 'react';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { BsShield } from 'react-icons/bs';
+import {FiAlertTriangle } from 'react-icons/fi'
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData, medicalproBranding, medicalproBranding2, medicalproBranding3, recentTransactions, weeklyStats, weeklyStats2, weeklyStats3, dropdownData, SparklineAreaData, ecomPieChartData, appointmentTime } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import '../style.scss';
 import FormData from 'form-data';
@@ -18,6 +19,7 @@ const DropDown = ({ currentMode }) => (
     <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
   </div>
 );
+
 
 const Main = () => {
   const { currentColor, currentMode } = useStateContext();
@@ -57,7 +59,6 @@ const Main = () => {
           }
       });
   }
-
 
   return (
     <div className="mt-24">
@@ -187,15 +188,14 @@ const Main = () => {
       {prediction && prediction.malignant_probability > prediction.benign_probability &&
 
       <div className="flex gap-10 m-4 flex-wrap justify-center">
-    
+        {prediction && prediction.malignant_probability >= 98 &&
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
-            <p className="text-xl font-semibold">Анализ</p>
+          <p className="text-xl font-semibold">Анализ</p>
             <button type="button" className="text-xl font-semibold text-gray-500">
               <IoIosMore />
             </button>
           </div>
-
           <div className="mt-10 ">
             {weeklyStats.map((item) => (
               <div key={item.title} className="flex justify-between mt-4 w-full">
@@ -216,12 +216,75 @@ const Main = () => {
                 <p className={`text-${item.pcColor}`}>{item.amount}</p>
               </div>
             ))}
-            <div className="mt-4">
-              <SparkLine currentColor={currentColor} id="area-sparkLine" height="160px" type="Area" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
+
+          </div>
+        </div>
+        }
+        {prediction && prediction.malignant_probability >= 90 && prediction.malignant_probability < 98 &&
+        <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+          <div className="flex justify-between">
+          <p className="text-xl font-semibold">Анализ</p>
+            <button type="button" className="text-xl font-semibold text-gray-500">
+              <IoIosMore />
+            </button>
+          </div>
+          <div className="mt-10 ">
+            {weeklyStats2.map((item) => (
+              <div key={item.title} className="flex justify-between mt-4 w-full">
+                <div className="flex gap-4">
+                  <button
+                    type="button"
+                    style={{ background: item.iconBg }}
+                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3"
+                  >
+                    {item.icon}
+                  </button>
+                  <div>
+                    <p className="text-md font-semibold">{item.title}</p>
+                    <p className="text-sm text-gray-400">{item.desc}</p>
+                  </div>
+                </div>
+
+                <p className={`text-${item.pcColor}`}>{item.amount}</p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+        }
+        {prediction && prediction.malignant_probability < 90 &&
+          <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+            <div className="flex justify-between">
+            <p className="text-xl font-semibold">Анализ</p>
+              <button type="button" className="text-xl font-semibold text-gray-500">
+                <IoIosMore />
+              </button>
+            </div>
+            <div className="mt-10 ">
+              {weeklyStats3.map((item) => (
+                <div key={item.title} className="flex justify-between mt-4 w-full">
+                  <div className="flex gap-4">
+                    <button
+                      type="button"
+                      style={{ background: item.iconBg }}
+                      className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3"
+                    >
+                      {item.icon}
+                    </button>
+                    <div>
+                      <p className="text-md font-semibold">{item.title}</p>
+                      <p className="text-sm text-gray-400">{item.desc}</p>
+                    </div>
+                  </div>
+  
+                  <p className={`text-${item.pcColor}`}>{item.amount}</p>
+                </div>
+              ))}
+  
             </div>
           </div>
-
-        </div>
+          }
+        {/*</div>*/}
         <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 m-2">
           <div className="flex gap-4 items-center gap-2">
             <p className="text-xl font-semibold">Направление</p>
@@ -233,24 +296,28 @@ const Main = () => {
           </p>
 
           <div>
-            {medicalproBranding.data.map((item) => (
+            {/*{medicalproBranding.data.map((item) => (
               <div>
                 <p className="text-xs text-gray-400">{item.title}</p>
                 <p className="text-sm">{item.desc}</p>
               </div>
             
             ))}
-          
+            */}
           <div className="border-b-1 border-color pb-4 mt-2">
             <p className="text-md font-semibold mb-2">Дата</p>
             <div className="flex gap-4">
-            <p className="text-gray-500 mt-1">3 марта, пятница</p>
+            
+            <p className="text-gray-500 mt-1">10 апреля, понедельник</p>
             </div>
           </div>
           <div className="border-b-1 border-color pb-4 mt-2">
             <p className="text-md font-semibold mb-2">Время</p>
             <div className="flex gap-4">
-            <p className="text-gray-500 mt-1">15:00</p>
+            <p className="text-gray-500 mt-1">12:00</p>
+            {/*{appointmentTime.hours.map((time, index) => (
+                <img key={index} className="rounded-full w-8 h-8" src={time.image} alt="" />
+            ))}*/}
             </div>
           </div>
           </div>
@@ -260,14 +327,36 @@ const Main = () => {
             <p className="text-gray-500 mt-1">ГБУЗ “ГКОБ №1 ДЗМ</p>
             </div>
           </div>
+          {prediction && prediction.malignant_probability > 95 &&
           <div className="mt-2">
             <p className="text-md font-semibold mb-2">Ваш врач</p>
             <div className="flex gap-4">
               {medicalproBranding.leaders.map((item, index) => (
                 <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
               ))}
-            </div>
-          </div>
+                </div>
+              </div>
+            }
+            {prediction && prediction.malignant_probability > 85 && prediction.malignant_probability < 95 &&
+            <div className="mt-2">
+              <p className="text-md font-semibold mb-2">Ваш врач</p>
+              <div className="flex gap-4">
+                {medicalproBranding2.leaders.map((item, index) => (
+                  <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
+                ))}
+                </div>
+              </div>
+              }
+              {prediction && prediction.malignant_probability < 85 &&
+                <div className="mt-2">
+                  <p className="text-md font-semibold mb-2">Ваш врач</p>
+                  <div className="flex gap-4">
+                    {medicalproBranding3.leaders.map((item, index) => (
+                      <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
+                    ))}
+                      </div>
+                    </div>
+              }
           <div className="flex justify-between items-center mt-5 border-t-1 border-color">
             <div className="mt-3">
               <Button
