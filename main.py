@@ -18,21 +18,21 @@ app = Flask(__name__)
 
 #app = Flask(__name__)
 
-# model = load_model('cancer_pretrained_model.h5')
+model = load_model('cancer_pretrained_model.h5')
 
 # PROJECT_NAME = 'glowing-program-379304'
 # CREDENTIALS = 'glowing-program-379304-27f18cfbab2c.json'
 # MODEL_PATH = 'gs://cancer_treatment/cancer_pretrained_model.h5'
 
-PROJECT_NAME = 'web-app-cancer-treatment'
-CREDENTIALS = 'web-app-cancer-treatment-90c0c8e4ff2d.json'
-MODEL_PATH = 'gs://pretrained-melanoma-model/cancer_pretrained_model.h5'
+# PROJECT_NAME = 'web-app-cancer-treatment'
+# CREDENTIALS = 'web-app-cancer-treatment-90c0c8e4ff2d.json'
+# MODEL_PATH = 'gs://pretrained-melanoma-model/cancer_pretrained_model.h5'
 
-FS = gcsfs.GCSFileSystem(project=PROJECT_NAME,
-                         token=CREDENTIALS)
-with FS.open(MODEL_PATH, 'rb') as model_file:
-     model_gcs = h5py.File(model_file, 'r')
-     model = load_model(model_gcs)
+# FS = gcsfs.GCSFileSystem(project=PROJECT_NAME,
+#                          token=CREDENTIALS)
+# with FS.open(MODEL_PATH, 'rb') as model_file:
+#      model_gcs = h5py.File(model_file, 'r')
+#      model = load_model(model_gcs)
 			   
 
 # get model
