@@ -337,13 +337,13 @@ const Main = () => {
                 </div>
               </div>
             }
-            {prediction && prediction.malignant_probability > 90 && prediction.malignant_probability < 95 &&
+            {prediction && prediction.malignant_probability > 85 && prediction.malignant_probability < 95 &&
             <div className="mt-2">
               <p className="text-md font-semibold mb-2">Ваш врач</p>
               <div className="flex gap-4">
-                {medicalproBranding2.leaders.map((item, index) => (
-                  <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
-                ))}
+              {medicalproBranding3.leaders.map((item, index) => (
+                      <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
+                    ))}
                 </div>
               </div>
               }
@@ -351,7 +351,7 @@ const Main = () => {
                 <div className="mt-2">
                   <p className="text-md font-semibold mb-2">Ваш врач</p>
                   <div className="flex gap-4">
-                    {medicalproBranding3.leaders.map((item, index) => (
+                    {medicalproBranding2.leaders.map((item, index) => (
                       <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
                     ))}
                       </div>

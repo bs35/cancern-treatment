@@ -785,7 +785,7 @@ export const weeklyStats2 = [
     {
       icon: <AiFillExclamationCircle />,
       amount: '',
-      title: 'Подозрение на меланому II степени',/*Подозрение на меланому III степени*/
+      title: 'Подозрение на меланому III степени',/*Подозрение на меланому III степени*/
       desc: '',
       iconBg: '#00C292',
       pcColor: 'green-600',
