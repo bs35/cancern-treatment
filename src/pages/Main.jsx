@@ -67,7 +67,7 @@ const Main = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Медкарта пациента</p>
-              <p className="text-2xl">Крапивина А.И.</p>
+              <p className="text-2xl">Беляев Е.П.</p>
             </div>
 
             <button
@@ -308,13 +308,13 @@ const Main = () => {
             <p className="text-md font-semibold mb-2">Дата</p>
             <div className="flex gap-4">
             
-            <p className="text-gray-500 mt-1">10 апреля, понедельник</p>
+            <p className="text-gray-500 mt-1">2 мая, вторник</p>
             </div>
           </div>
           <div className="border-b-1 border-color pb-4 mt-2">
             <p className="text-md font-semibold mb-2">Время</p>
             <div className="flex gap-4">
-            <p className="text-gray-500 mt-1">12:00</p>
+            <p className="text-gray-500 mt-1">13:30</p>
             {/*{appointmentTime.hours.map((time, index) => (
                 <img key={index} className="rounded-full w-8 h-8" src={time.image} alt="" />
             ))}*/}
@@ -337,7 +337,7 @@ const Main = () => {
                 </div>
               </div>
             }
-            {prediction && prediction.malignant_probability > 85 && prediction.malignant_probability < 95 &&
+            {prediction && prediction.malignant_probability > 90 && prediction.malignant_probability < 95 &&
             <div className="mt-2">
               <p className="text-md font-semibold mb-2">Ваш врач</p>
               <div className="flex gap-4">

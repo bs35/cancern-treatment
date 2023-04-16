@@ -49,7 +49,7 @@ const Treatment = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Медкарта</p>
-              <p className="text-2xl">Крапивина А.И.</p>
+              <p className="text-2xl">Беляев Е.П.</p>
             </div>
 
             <button

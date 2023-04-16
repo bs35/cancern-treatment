@@ -609,7 +609,7 @@ export const chatData = [
 export const earningData = [
   {
     icon: <BsFileEarmarkMedical />,
-    amount: '123456789000000',
+    amount: '117454782000000',
     percentage: '',
     title: 'Полис ОМС',
     iconColor: '#03C9D7',
