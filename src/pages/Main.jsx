@@ -188,7 +188,7 @@ const Main = () => {
       {prediction && prediction.malignant_probability > prediction.benign_probability &&
 
       <div className="flex gap-10 m-4 flex-wrap justify-center">
-        {prediction && prediction.malignant_probability >= 98 &&
+        {prediction && prediction.malignant_probability >= 92 &&
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
           <p className="text-xl font-semibold">Анализ</p>
@@ -220,7 +220,7 @@ const Main = () => {
           </div>
         </div>
         }
-        {prediction && prediction.malignant_probability >= 90 && prediction.malignant_probability < 98 &&
+        {prediction && prediction.malignant_probability >= 90 && prediction.malignant_probability <= 91 &&
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
           <p className="text-xl font-semibold">Анализ</p>
