@@ -618,7 +618,7 @@ export const earningData = [
   },
   {
     icon: <BsFillCalendarEventFill />,
-    amount: '06.11.1980',
+    amount: '23.09.1987',
     percentage: '',
     title: 'Дата рождения',
     iconColor: 'rgb(228, 106, 118)',
@@ -637,7 +637,7 @@ export const earningData = [
   },
   {
     icon: <BsAsterisk />,
-    amount: 'II группа',
+    amount: 'IV уппа',
     percentage: '',
     title: 'Группа здоровья',
     iconColor: 'rgb(255, 244, 229)',
@@ -1701,7 +1701,7 @@ export const employeesData = [
   },
   {
     EmployeeID: 4,
-    Name: 'Крапивина Ирина Алексеевна',
+    Name: 'Беляев Е.П.',
     Title: '156454912000000',
     HireDate: '01/02/2021',
     Country: 'ГБУЗ "ГКОБ № 1 ДЗМ"',
