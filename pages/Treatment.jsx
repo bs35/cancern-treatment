@@ -91,36 +91,8 @@ const Treatment = () => {
         </div>
       </div>
 
-      {!analysis && (
-      <div className="flex flex-wrap lg:flex-nowrap justify-center m-4 ">
-        <div className="md:w-760 md:h-50">
-          <div className="dropzone">
-          <Dropzone
-          getUploadParams={getUploadParams}
-          onChangeStatus={handleChangeStatus}
-          onSubmit={handleSubmit}
-          onClick={() => setAnalysis(true)}
-          submitButtonContent="Отправить"
-          inputWithFilesContent="Загрузить ещё"
-          inputContent=<div>
-          <FontAwesomeIcon
-            className="customIcon"
-            style={{
-              color: "rgb(243, 243, 243)",
-              fontSize: "50px",
-              margin: "10px 150px"
-            }}
-            icon={faCloudUploadAlt}
-          />
-          <p>Перетащите анализы сюда или нажмите, чтобы загрузить</p>
-        </div>
-          accept="application/pdf,image/*,audio/*,video/*"
-          />
-          </div>
-        </div>
-      </div>
-      )}
-      {analysis && <div className="flex gap-10 m-4 flex-wrap justify-center">
+
+      <div className="flex gap-10 m-4 flex-wrap justify-center">
       <div className="flex gap-10 m-4 flex-wrap justify-center">
       {/* Краткое изложение назначенного лечения */}
       <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
@@ -219,7 +191,6 @@ const Treatment = () => {
         </div>
       </div>
       </div>
-      }
     </div>
   );
 };
