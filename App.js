@@ -66,6 +66,7 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<Main />)} />
+                <Route path="/cancern-treatment" element={(<Main />)} />
                 <Route path="/main" element={(<Main />)} />
 
                 {/* pages  */}
