@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cancern-treatment/static/css/main.37e65600.css",
-    "main.js": "/cancern-treatment/static/js/main.12e7e1e3.js",
+    "main.css": "/cancern-treatment/static/css/main.7b60c8b6.css",
+    "main.js": "/cancern-treatment/static/js/main.d5aac43b.js",
     "static/media/product4.jpg": "/cancern-treatment/static/media/product4.767417bea17688d6d8ce.jpg",
     "static/media/Melanoma.jpeg": "/cancern-treatment/static/media/Melanoma.91e902219b3ecabcdc0e.jpeg",
     "static/media/product2.jpg": "/cancern-treatment/static/media/product2.e93f12ec1b20980a1bd1.jpg",
@@ -22,11 +22,11 @@
     "static/media/avatar4.jpg": "/cancern-treatment/static/media/avatar4.a56a3df07ad83c6b4e76.jpg",
     "static/media/product5.jpg": "/cancern-treatment/static/media/product5.f4c5d8f991b753ca0fcc.jpg",
     "index.html": "/cancern-treatment/index.html",
-    "main.37e65600.css.map": "/cancern-treatment/static/css/main.37e65600.css.map",
-    "main.12e7e1e3.js.map": "/cancern-treatment/static/js/main.12e7e1e3.js.map"
+    "main.7b60c8b6.css.map": "/cancern-treatment/static/css/main.7b60c8b6.css.map",
+    "main.d5aac43b.js.map": "/cancern-treatment/static/js/main.d5aac43b.js.map"
   },
   "entrypoints": [
-    "static/css/main.37e65600.css",
-    "static/js/main.12e7e1e3.js"
+    "static/css/main.7b60c8b6.css",
+    "static/js/main.d5aac43b.js"
   ]
 }
