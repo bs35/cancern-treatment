@@ -98,7 +98,7 @@ const Treatment = () => {
       <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Рекомендованное Лечение</p>
-            <button type="button" className="text-xl font-semibold text-gray-500">
+            <button type="button" className="text-xl text-gray-500">
               <IoIosMore />
             </button>
           </div>
@@ -109,27 +109,21 @@ const Treatment = () => {
               alt=""
             />*/}
             <div className="mt-8">
-              <p className="font-semibold text-lg"></p>
+              <p className="text-lg"></p>
               <p className="text-gray-400 "></p>
-              <p className="font-semibold text-lg"> На основе анализов, определена меланома IV стадии после полной циторедукции.</p>
-              <p className="font-semibold text-lg"></p>
-              <p className="font-semibold text-lg"> Рекомендованная адъювантная терапия:</p>
-              <p className="font-semibold text-lg"></p>
-              <p className="font-semibold text-lg">1. Ниволумаб 1 мг/кг внутривенно капельно каждые три недели</p>
-              <p className="font-semibold text-lg">2. Четыре введения ипилимумаба 3 мг/кг внутривенно капельно каждые три недели + с дальнейшим поддерживающим режимом ниволумаба в дозе 3 мг/кг внутривенно капельно каждые две недели.</p>
+              <p className="text-lg"> На основе анализов, определена меланома IV стадии после полной циторедукции.</p>
+              <p className="text-lg"></p>
+              <br></br>
+              <p className="text-lg"> Рекомендованная адъювантная терапия:</p>
+              <p className="text-lg"></p>
+              <br></br>
+              <p className="text-lg">1. Ниволумаб 1 мг/кг внутривенно капельно каждые три недели</p>
+              <p className="text-lg">2. Четыре введения ипилимумаба 3 мг/кг внутривенно капельно каждые три недели + с дальнейшим поддерживающим режимом ниволумаба в дозе 3 мг/кг внутривенно капельно каждые две недели.</p>
               {/*<p className="font-semibold text-lg">
               На основе анализов, определена меланома IV стадии после полной циторедукции. 
               Рекомендованная адъювантная терапия: 
 Ниволумаб 1 мг/кг внутривенно капельно каждые три недели + четыре введения ипилимумаба 3 мг/кг внутривенно капельно каждые три недели с дальнейшим поддерживающим режимом ниволумаба в дозе 3 мг/кг внутривенно капельно каждые две недели.
           </p>*/}
-              <div className="mt-3">
-                {/*<Button
-                  color="white"
-                  bgColor={currentColor}
-                  text="Read More"
-                  borderRadius="10px"
-                />*/}
-              </div>
             </div>
           </div>
         </div>

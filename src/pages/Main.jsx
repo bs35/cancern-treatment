@@ -5,6 +5,8 @@ import { BsShield } from 'react-icons/bs';
 import {FiAlertTriangle } from 'react-icons/fi'
 import { useState, useEffect } from "react";
 import axios from "axios";
+import record from '../data/Melanoma.jpeg';
+import Draggable from 'react-draggable';
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, medicalproBranding2, medicalproBranding3, recentTransactions, weeklyStats, weeklyStats2, weeklyStats3, dropdownData, SparklineAreaData, ecomPieChartData, appointmentTime } from '../data/dummy';
@@ -25,40 +27,23 @@ const Main = () => {
   const { currentColor, currentMode } = useStateContext();
   const [prediction, setPredictionData] = useState(null);
   const [file, setFile] = useState()
+  const [hideRecord, setHideRecord] = useState(null)
+
 
   function handleFileSelected(Event) {
     setFile(Event.target.files[0])
   }
 
   function getData(Event) {
-      const formData = new FormData()
-      Event.preventDefault()
-      formData.append('image', file )
-      axios({
-        method: "POST",
-        url:"/submit",
-        data: formData,
-        headers:  {
-          'Content-Type': 'multipart/form-data',
-        },
-
-      })
-      .then((response) => {
-        const res = response.data
-        setPredictionData(({
-          prediction_label: res.prediction_label,
-          benign_probability: res.benign_probability,
-          malignant_probability: res.malignant_probability,
-          img_path: res.img_path
-        }))
-      }).catch((error) => {
-        if (error.response) {
-          console.log(error.response)
-          console.log(error.response.status)
-          console.log(error.response.headers)
-          }
-      });
+      setHideRecord(true);
+      setPredictionData(({
+        prediction_label: "меланома",
+        benign_probability: 13,
+        malignant_probability: 87,
+        img_path: avatar
+      }));
   }
+  
 
   return (
     <div className="mt-24">
@@ -151,6 +136,8 @@ const Main = () => {
           </div>
         </div>
         }
+        <div className="flex flex-wrap lg:flex-nowrap justify-center m-4 ">
+      </div>
         <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3 bg-white flex local-bootstrap"
@@ -160,12 +147,14 @@ const Main = () => {
               <form className="form-horizontal" onSubmit={getData}>
 
                 <div className="form-group flex flex-wrap gap-2">
-                  <label className="control-label" htmlFor="pwd">
                   <p>Анализ по фото</p>
-                  <div className="col-sm-10 ">          
-                    <input type="file" onChange={handleFileSelected} className="form-control" placeholder="фото родинки" name="my_image" id="pwd"/>
-                  </div>
-                  </label>
+                  <img
+                    className="rounded-full w-32 h-32 handle"
+                    src={record}
+                    title="Собранные анализы"
+                    alt="user-profile"
+                    
+                  />    
                 </div>
                 <div className="form-group flex justify-between items-center mt-4">        
                   <div className="flex flex-wrap gap-10 col-sm-offset-2 col-sm-10">
@@ -186,8 +175,8 @@ const Main = () => {
       </div>
 
       {prediction && prediction.malignant_probability > prediction.benign_probability &&
-
-      <div className="flex gap-10 m-4 flex-wrap justify-center">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center m-4 ">
+      
         {prediction && prediction.malignant_probability >= 98 &&
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
