@@ -62,3 +62,13 @@
 .dzu-submitButton {
   background-color: #04c9d7;
 }
+
+
+.dzu-previewFileName {
+  visibility: hidden;
+}
+
+.dzu-previewFileName:after {
+  content: "Анализы пациента";
+  visibility: visible;
+}

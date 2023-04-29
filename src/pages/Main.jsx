@@ -35,12 +35,13 @@ const Main = () => {
   }
 
   function getData(Event) {
+      Event.preventDefault();
       setHideRecord(true);
       setPredictionData(({
         prediction_label: "меланома",
         benign_probability: 13,
         malignant_probability: 87,
-        img_path: avatar
+        img_path: record
       }));
   }
   
@@ -93,7 +94,7 @@ const Main = () => {
           ))}
         </div>
       </div>
-      <div className="flex gap-10 flex-wrap justify-center mt-6">
+      <div className="flex gap-2 flex-wrap justify-center mt-2">
         {prediction && 
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
@@ -121,14 +122,6 @@ const Main = () => {
               <div className="mt-5">
                 <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
               </div>
-              <div className="mt-10">
-                <Button
-                  color="white"
-                  bgColor={currentColor}
-                  text="Загрузить отчет"
-                  borderRadius="10px"
-                />
-              </div>
             </div>
             <div>
               <Stacked currentMode={currentMode} width="320px" height="360px" />
@@ -137,39 +130,40 @@ const Main = () => {
         </div>
         }
         <div className="flex flex-wrap lg:flex-nowrap justify-center m-4 ">
-      </div>
+        </div>
         <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3 bg-white flex local-bootstrap"
           >
-            <div className="container flex flex-wrap">
+            {!prediction && <div className="container flex-wrap">
               <p className="font-semibold text-xl">AI Диагностика</p>
-              <form className="form-horizontal" onSubmit={getData}>
-
-                <div className="form-group flex flex-wrap gap-2">
-                  <p>Анализ по фото</p>
+              <form className="form-horizontal flex-wrap gap-2" onSubmit={getData}>
+                <p>Анализ по фото
+                <br></br>
+                </p>
+                <div className="form-group flex flex-wrap gap-2  justify-between items-center">
+                  
                   <img
-                    className="rounded-full w-32 h-32 handle"
+                    className="h-32 handle"
                     src={record}
-                    title="Собранные анализы"
                     alt="user-profile"
                     
                   />    
                 </div>
                 <div className="form-group flex justify-between items-center mt-4">        
-                  <div className="flex flex-wrap gap-10 col-sm-offset-2 col-sm-10">
+                  <div className="flex-wrap gap-10 col-sm-offset-2 col-sm-10">
                     <button type="submit" className="btn btn-success">Отправить</button>
 
-                    {prediction && <div className="flex flex-wrap gap-4">
-                        <img src={prediction.img_path} height="400px" width="400px" />
-                        <p className="font-semibold text-xl">Предсказание  : <i> {prediction.prediction_label} </i></p>
-                      </div>
-                    }
+
                   </div>
                 </div>
               </form>
-            </div>
-
+            </div> }
+            {prediction && <div className="flex-wrap">
+                        <img src={prediction.img_path} height="400px" width="400px" />
+                        <p className="font-semibold text-xl mt-4">Предсказание  : <i> {prediction.prediction_label} </i></p>
+                      </div>
+                    }
           </div>
         </div>
       </div>
